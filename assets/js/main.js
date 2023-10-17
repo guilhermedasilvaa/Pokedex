@@ -11,8 +11,8 @@ function loadPokemonItems(offset,limit){
     //transformou em lista html
     // const newHtml = pokemons.map(convertPokemonToLi).join('')
     // pokemonList.innerHTML = newHtml
-    const newHtml =pokemons.map((pokemon)=>`
-            <a href="detalhes.html">
+        const newHtml =pokemons.map((pokemon)=>`
+            <a class="details" href="detalhes.html">
                 <li class="pokemon  ${pokemon.type}">
                     <span class="number">${pokemon.number}</span>
                     <span class="name">${pokemon.name}</span>
@@ -20,6 +20,7 @@ function loadPokemonItems(offset,limit){
                     <div class="detail">
                         <ol class="types">
                             ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                            ${pokemon.abilitys.map((ability) => `<li class="type ${ability}">${ability}</li>`).join('')}
                         </ol>
     
                         <img src="${pokemon.photo}"
@@ -27,6 +28,8 @@ function loadPokemonItems(offset,limit){
                     </div>
                 </li>
             </a>
+          
+            
         
             `).join('')   
 
@@ -43,7 +46,7 @@ loadMoreButton.addEventListener('click',()=>{
 
     if(qtdrecordsNextPage >= maxRecords){
         const newLimit = maxRecords - offset
-        debugger
+        
         loadPokemonItems(offset,newLimit)
         loadMoreButton.parentElement.removeChild(loadMoreButton)
     }else 

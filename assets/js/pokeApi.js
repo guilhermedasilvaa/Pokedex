@@ -11,7 +11,18 @@ function convertPokeApiDetailToPokemon(pokeDetail){
         pokemon.types = types
         pokemon.type = type
 
+        const abilitys = pokeDetail.abilities.map((abilitySlot)=>abilitySlot.ability.name)
+        const [ability] = abilitys
+
+        pokemon.abilitys = abilitys
+        pokemon.ability = ability
+       
+      
+
+        
+
         pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+
 
         return pokemon
 }
@@ -25,7 +36,7 @@ pokeApi.getPokemonDetail = (pokemon)=>{
 }
 pokeApi.getPokemons = (offset, limit) => {
      const url = 'https://pokeapi.co/api/v2/pokemon/?offset='+offset+'&limit='+limit
-     //requisicao da lista que pokemons, devolvendo um http response
+     //requisicao da lista que pokemons, devolvendo um http response.
      return fetch(url)
         //converte http reponse em json
         .then((response) => response.json())
