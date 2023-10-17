@@ -83,7 +83,7 @@
     flex-direction: column;
     margin:.5rem;
     padding: 1rem;
-    border-radius:1rem;
+    border-radius:2rem;
     
 }
 
@@ -161,12 +161,6 @@
 a{
     text-decoration: none;
 }
-
-.detailsStyleButton{
-    text-decoration: none;
-}
-
-
 
 
 @media screen and (min-width: 300px){

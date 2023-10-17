@@ -22,6 +22,7 @@ function convertPokeApiDetailToPokemon(pokeDetail){
         
 
         pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+        pokemon.photo3d = pokeDetail.sprites.other.home.front_default
 
 
         return pokemon
