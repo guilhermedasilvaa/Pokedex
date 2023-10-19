@@ -87,11 +87,6 @@
     
 }
 
-.pokemon:hover{
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-
-}
 
 .pokemon .number{
     color:rgba(255, 255, 255, 0.486);
@@ -160,7 +155,11 @@
 
 a{
     text-decoration: none;
+    
 }
+a:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);}
 
 
 @media screen and (min-width: 300px){
